@@ -1,0 +1,43 @@
+
+
+     <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <% festivalData.forEach( function (festival){ %>   
+
+                    <% if(festival.logo != null) { %>
+                    <a class="navbar-brand" href="#"><img src="<%= festival.logo %>"></a>
+
+                    <% } %>
+
+                    <% if(festival.logo == null) { %>
+                    <a href="/admin" class="btn btn-info">Logo upload <i class="fa fa-arrow-right"></i></a>
+
+                    <% } %>                       
+                         
+                <% }); %>
+
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <%if (renderMenu == "renderNO") { %>
+                        <a href="/menu_navigation" class="btn btn-info">Build navigation menu <i class="fa fa-arrow-right"></i></a>
+                    <% } %>
+
+                    <%if (renderMenu == "renderYES") { %>
+                        <% for(var i=0; i<menu.length; i++) {%>
+                            <li><a href="<%= menu[i][0].page_slug %>"><%= menu[i][0].page_title %></a></li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </header><!--/header-->
+
+

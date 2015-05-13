@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    <% galleryOBJ.forEach( function (gallery){ %>
+
+        $(document).ready(function () {
+            $("#nanoGallery1").nanoGallery({
+
+              thumbnailWidth: <%= gallery.gallery_thumb_width %>, thumbnailHeight: <%= gallery.gallery_thumb_height %>,
+
+              userID:'<%= gallery.gallery_account_id %>', kind:'<%= gallery.gallery_service %>',
+
+              thumbnailHoverEffect:[{name: 'imageScale150', duration:500}, {name:'labelAppear75', duration:400}],
+
+              imageTransition : 'slide',     
+
+              i18n:{ 
+                breadcrumbHome: '<i class="fa fa-camera bum fa-1x"></i> <span class="bum"><%= festSite %> Gallery</span>',
+
+              },
+
+              galleryToolbarHideIcons: true,
+              thumbnailLazyLoad: true
+            });
+          });
+    
+     <% }); %>
+    
+</script>
+
+
+
+                    
+
+                    

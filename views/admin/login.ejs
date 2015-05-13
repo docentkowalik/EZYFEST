@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | Login</title>
+
+        <meta name="" content="">
+        <meta name="" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+                <link rel="stylesheet" href="css/admin/login.css">
+
+
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    </head>
+
+    <!-- Body -->
+   <body>
+
+<center>
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-6 col-md-offset-3">
+            <a href="/"><img class="logoIMG" src="http://res.cloudinary.com/docentkowalik/image/upload/v1429698024/logo-big_f97bl5.png" alt="logo"></a>
+                        <p class="MGSBAR"><%= msg %></p>
+
+    </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3" id="login">
+            <form role="form"  action='/login' name='login_festival' id='logFest' method='POST'>
+                <div class="form-group">
+                     <input type="text" placeholder="Email" class="form-control" id="festival_Email" name="festival_Email" autofocus/>
+                </div>
+
+                <div class="form-group">
+                     <input type="password" placeholder="Password" class="form-control" id="festival_Password" name="festival_Password" />
+                </div>
+
+              <input class="col-md-6 " type="submit" value="Sign in">
+               <center>
+               <div>
+                   <a href="#" class="bottom-options">Forgot password ?</a>
+            </div>
+            </center>
+            </form>
+        </div>
+    </div>
+</div></center>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
+
+        <!-- Bootstrap.js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/plugins.js"></script>
+        <script src="js/admin/main.js"></script>
+
+    </body>
+</html>

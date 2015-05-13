@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | Line Up Artist</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="stylesheet" href="js/admin/vendor/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css">
+
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+
+    
+
+
+    </head>
+
+   <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="gi gi-plus" id="icon-margin"></i>New Line Up Artist<br><small>Please enter artist details</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                    <li><a href="/fest_lineup">Line Up</a></li>
+                    <li><a href="/new_line_up">New Line Up Artist</a></li>
+
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- Input Sizes -->
+            <form role="form" action='/processNewLineUp' name='processNewLineUp' id='processNewLineUp' class="form-horizontal" enctype="multipart/form-data" method='POST'>
+
+                                <h4 class="sub-header">New Line Up Artist</h4>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Upload image</label>
+                                            <div class="col-md-4">
+                                                <input type="file" name='lineup_artist_img' id='lineup_artist_img' class="form-control">
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Artist Name</label>
+                                            <div class="col-md-4">
+                                                <input type="text" name='lineup_artist_name' id='lineup_artist_name' class="form-control input-sm" maxlength="20"
+                                                placeholder="Please enter line up artist name here">
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Venue</label>
+                                            <div class="col-md-4">
+                                                <input type="text" id="lineup_venue" name="lineup_venue" class="form-control input-sm" maxlength="20"
+                                                placeholder="Please enter line up venue here">
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <h4 class="sub-header">Social Media Links<small> (optional)</small></h4>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Facebook</label>
+                                            <div class="col-md-4">
+                                               <input type="text"  name='lineup_facebook_link' id='lineup_facebook_link' class="form-control input-sm" placeholder="Please enter Facebook link here">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Twitter</label>
+                                            <div class="col-md-4">
+                                               <input type="text"  name='lineup_twitter_link' id='lineup_twitter_link' class="form-control input-sm" placeholder="Please enter Twitter link here">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Google +</label>
+                                            <div class="col-md-4">
+                                               <input type="text"  name='lineup_google_link' id='lineup_google_link' class="form-control input-sm" placeholder="Please enter Google + link here">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label class="control-label col-md-2" for="file">Youtube</label>
+                                            <div class="col-md-4">
+                                               <input type="text" name='lineup_youtube_link' id='lineup_youtube_link' class="form-control input-sm" placeholder="Please enter Youtube link here">
+                                            </div>
+                                    </div>
+                                                                       
+                                    <div class="col-md-10">
+                                            <div class="col-md-10 col-md-offset-2">
+                                              <button type="submit" class="btn btn-success"><i class="gi gi-check" class="form-control input-sm" id="icon-margin"></i>Save</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                                 
+                            <!-- END Input Sizes -->
+
+                              
+            </div>
+            <!-- END Page Content -->
+
+         
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+        <script src="js/admin/vendor/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+        <script type="text/javascript">
+            $('.form_datetime').datetimepicker({
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                forceParse: 0,
+                showMeridian: 1,
+                format: "dd MM yyyy - hh:ii",
+            });
+        </script>
+    
+    </body>
+</html>

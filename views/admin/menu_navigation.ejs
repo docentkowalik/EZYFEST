@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | Navigation Menu</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="stylesheet" href="css/admin/nested-tabs.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    </head>
+
+   <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="gi gi-show_lines"></i>Navigation Menu<br><small>Create navigation menu structure</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                    <li>
+                        <a href="/menu_navigation">Navigation Menu</a>
+                    </li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                    <!-- Default File Upload Block -->
+                
+                <div class="block block-themed">
+                    <!-- Default File Upload Title -->
+                    <div class="block-title">
+                        <h4><i class="gi gi-align_right" id="icon-margin"></i>Navigation Menu Creator</h4>
+                    </div>
+                    <!-- END Default File Upload Title -->
+
+                 <!-- Default File Upload Content -->
+                    <div class="block-content">
+
+
+ 			<div class="cf nestable-lists">
+
+        <div class="dd" id="nestable">
+
+            <ol class="dd-list">
+              <% menupages.forEach( function (page){ %>
+                <li class="dd-item" data-id="<%= page._id %>">
+                    <div class="dd-handle"><%= page.page_title %></div>
+                </li>
+                                                            <% }); %>
+
+            </ol>
+        </div>
+
+     
+
+
+
+    <form role="form" action='/processSaveMenu' name='processSaveMenu' id='processSaveMenu' method='POST'>
+         <textarea id="nestable-output" name="nestable-output"></textarea>
+            <button class="btn btn-sm btn-success">
+                <i class="gi gi-ok_2" id="icon-margin"></i>Save
+            </button>
+    </form>
+
+</div>
+</div>
+
+            </div>
+            <!-- END Page Content -->
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+        <script src="js/admin/vendor/nestable-menu/jquery.nestable.js"></script>
+        <script src="js/admin/vendor/duallistbox/dist/dual-list-box.js"></script>
+
+
+      
+        <script src="js/admin/accordionMenu.js"></script>
+
+<script>
+$(document).ready(function()
+{
+    var updateOutput = function(e)
+    {
+        var list   = e.length ? e : $(e.target),
+            output = list.data('output');
+        if (window.JSON) {
+            output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+        } else {
+            output.val('JSON browser support required for this demo.');
+        }
+    };
+    // activate Nestable for list 1
+    $('#nestable').nestable({
+        group: 1
+    })
+    .on('change', updateOutput);
+    // activate Nestable for list 2
+    $('#nestable2').nestable({
+        group: 1
+    })
+    .on('change', updateOutput);
+    // output initial serialised data
+    updateOutput($('#nestable').data('output', $('#nestable-output')));
+    $('#nestable-menu').on('click', function(e)
+    {
+        var target = $(e.target),
+            action = target.data('action');
+        if (action === 'expand-all') {
+            $('.dd').nestable('expandAll');
+        }
+        if (action === 'collapse-all') {
+            $('.dd').nestable('collapseAll');
+        }
+    });
+    $('#nestable3').nestable();
+});
+</script>
+
+    </body>
+</html>
+
+
+

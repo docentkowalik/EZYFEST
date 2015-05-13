@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="stylesheet" href="css/admin/landelements.css">
+        <link rel="stylesheet" href="css/admin/land-style.css">
+
+        <link rel="stylesheet" type="text/css" href="css/admin/additions.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    
+
+
+    </head>
+    <body>
+        
+       
+
+        <!-- Top content -->
+        <div class="top-content" style="background-color:#2980B9;">
+              
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                   
+                        <div class="col-sm-7 text">
+                         <div class="text-center">
+                  
+<img class="scale" src="http://res.cloudinary.com/docentkowalik/image/upload/v1429698024/logo-big_f97bl5.png" alt="logo">                   
+                    <!-- END Logo -->
+                </div>
+                        
+                        <div class="wrap">
+                        <hr/>
+<h1><strong>Welcome to EZYFEST</strong></h1>
+                            <div class="description">
+                                <p>
+                                    The simple, no code required, build your own Festival website platform..
+                                </p>
+                            </div>
+                            <div class="top-big-link">
+                                <div class="text-center">
+            <a href="/login"><button type="button" class="btn btn-sunny text-uppercase btn-lg">Sign in</button></a>
+            <a href="/ezyfestivals"><button type="button" class="btn btn-fresh text-uppercase btn-lg">Festivals</button></a>
+        </div>
+                            </div>
+    </div>
+                            
+                        </div>
+                        <div class="col-sm-5 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Sign up now</h3>
+                                    <p class="MGSBAR"><%= msg %></p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                        
+                        <form role="form" action='/processRegister' name='processRegister' id='processRegister' method='POST' id="reg-form">
+
+                        <div class="form-group">
+                            <input type="text" name="first" placeholder="First name..." class="form-first-name form-control" id="first" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="last" placeholder="Last name..." class="form-first-name form-control" id="last" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="username" placeholder="Username..." class="form-first-name form-control" id="username" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="emailAdd" placeholder="Email..." class="form-first-name form-control" id="emailAdd" required autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password..." class="form-first-name form-control" id="password" required autofocus
+                            pattern=".{5,12}" required title="5 to 12 characters">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="Festival name..." class="form-last-name form-control" id="title" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="url" placeholder="www.ezyfest.com/yourfestivalurl" class="form-email form-control" id="url" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                        </div>
+                                    
+                                    <button type="submit" class="btn reg">SIGN UP</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+             <div class="container">
+    <div class="row">
+    <div class="col-lg-12 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-info"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">EZYFEST</h4>
+                    <p>EZYFEST is a content management system for festivals. Providing an easy to use interface, EZYFEST allows you to build your own website without having any programming knowledge. Through a system of plugins, shortcodes and input fields you can build your own website in no time at all!</p>
+                    <p>EZYFEST is built on a Bootstrap framework which means your site will be accessible, and look cool on all screen sizes, a must have feature in the current digital climate. EZYFEST provides you with a slick, modern, cost saving, responsive design to showcase your festival to the world!</p>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-desktop"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Responsive Design</h4>
+                    <p>Utilising Bootstrap your festival website will suit any screensize!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-code"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Code Free</h4>
+                    <p>No code required! Build your EZYFEST website with EZYFEST plugins!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-users"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Multiple Admins</h4>
+                    <p>Assign a number of administrators to build your site!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-plus"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Plugins</h4>
+                    <p>Simply select from the range of plugins to build your webpage. EZYFEST has all your festival website needs!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-money"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Cut Costs</h4>
+                    <p>Build it yourself, no developers fees!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marg">
+            <div class="box">
+                <div class="box-icon">
+                    <span class="fa fa-4x fa-send"></span>
+                </div>
+                <div class="info">
+                    <h4 class="text-center white-class">Social Media</h4>
+                    <p>EZYFEST provides easy link up with your social media accounts!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"  data-placement="left"><span class="fa fa-chevron-up"></span></a>
+</div>
+
+
+
+
+        </div>
+
+     
+
+
+                       
+
+            <!-- Footer Meta Data -->
+                <div class="landing-section">
+                    <div class="row">
+                       
+                       
+                        <p class="copyright">
+Copyright © · All Rights Reserved · EZYFEST    </p>
+                    </div>
+            </div>
+            <!-- END Footer Meta Data -->
+      
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 1200) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
+        </script>
+
+
+    </body>
+</html>

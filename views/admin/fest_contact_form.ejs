@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | Map & Contact Form</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    
+
+
+    </head>
+
+    <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="fa fa-envelope" id="icon-margin"></i>Map & Contact Form<br><small>Please set up <%= site %> map and contact form</small></h1>
+
+
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                                        <li><a href="#">Plugin</a></li>
+
+                    <li><a href="/fest_contact_form">Map & Contact Form</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+              <!-- Two Column Form Sponsor -->
+                <div class="block block-themed">
+                    <!-- Two Column Form Title -->
+                    <div class="block-title">
+                        <h4><i class="fa fa-cog" id="icon-margin"></i>Map & Contact Form Setup</h4>
+                    </div>
+                    <!-- END Two Column Form Title Sponsor -->
+
+                    <!-- Two Column Form Sponsor -->
+                    <div class="block-content">
+    <form role="form" action='/processContactSetup' name='processContactSetup' id='processContactSetup' class="form-horizontal" method='POST'>
+    
+
+                                            <% if(render == "false") { %>
+                                          <!-- div.row -->
+                            <div class="row">
+                           
+                              <!-- Horizontal Form Content -->
+                    <div class="block-content">
+                    
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Address Line 1</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="address-line-one" name="address-line-one" class="form-control"
+                                    value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Address Line 2</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="address-line-two" name="address-line-two" class="form-control"
+                                    value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">City</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="city" name="city" class="form-control"
+                                    value="">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label col-md-2" for="general-select">County</label>
+                                <div class="col-md-3">
+                                    <select id="general-select" name="county" class="county" size="1">
+                                        <option selected="selected">Select County</option>
+                                        <option>Carlow</option>
+                                        <option>Cavan</option>
+                                        <option>Clare</option>
+                                        <option>Cork</option>
+                                        <option>Donegal</option>
+                                        <optgroup label="Dublin"><option>Dublin 1</option>
+                                        <option>Dublin 2</option>
+                                        <option>Dublin 3</option>
+                                        <option>Dublin 4</option>
+                                        <option>Dublin 5</option>
+                                        <option>Dublin 6</option>
+                                        <option>Dublin 6</option>
+                                        <option>Dublin 7</option>
+                                        <option>Dublin 8</option>
+                                        <option>Dublin 9</option>
+                                        <option>Dublin 10</option>
+                                        <option>Dublin 11</option>
+                                        <option>Dublin 12</option>
+                                        <option>Dublin 13</option>
+                                        <option>Dublin 14</option>
+                                        <option>Dublin 15</option>
+                                        <option>Dublin 16</option>
+                                        <option>Dublin 17</option>
+                                        <option>Dublin 18</option>
+                                        <option>Dublin 19</option>
+                                        <option>Dublin 20</option>
+                                        <option>Dublin 21</option>
+                                        <option>Dublin 22</option>
+                                        <option>Dublin 23</option>
+                                        <option>Dublin 24</option>
+                                        <option>Rathdown</option>
+                                        <option>Fingal</option>
+                                        </optgroup>
+                                        <option>Galway</option>
+                                        <option>Kerry</option>
+                                        <option>Celbridge</option>
+                                        <option>Kilcock</option>
+                                        <option>Leixlip</option>
+                                        <option>Maynooth</option>
+                                        <option>Naas</option>
+                                        <option>Newbridge</option>
+                                        <option>Straffan</option>
+                                        <option>Kildare</option>
+                                        <option>Kilkenny</option>
+                                        <option>Laois</option>
+                                        <option>Leitrim</option>
+                                        <option>Limerick</option>
+                                        <option>Longford</option>
+                                        <option>Ardee</option>
+                                        <option>Drogheda</option>
+                                        <option>Dundalk</option>
+                                        <option>Louth</option>
+                                        <option>Louth</option>
+                                        <option>Mayo</option>
+                                        <option>Ashbourne</option>
+                                        <option>Clonee</option>
+                                        <option>Dunboyne</option>
+                                        <option>Dunshaughlin</option>
+                                        <option>Enfield</option>
+                                        <option>Garristown</option>
+                                        <option>Navan</option>
+                                        <option>Oldtown</option>
+                                        <option>Rathoath</option>
+                                        <option>Summerhill</option>
+                                        <option>Meath</option>
+                                        <option>Monaghan</option>
+                                        <option>Offaly</option>
+                                        <option>Roscommon</option>
+                                        <option>Sligo</option>
+                                        <option>Tipperary</option>
+                                        <option>Waterford</option>
+                                        <option>Westmeath</option>
+                                        <option>Wexford</option>
+                                        <option>Wicklow></option>
+                                        <option>Blessington</option>
+                                        <option>Bray</option>
+                                        <option>Greystones</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <hr/>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Contact Form Email</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="mail_form" name="mail_form" class="form-control"
+                                    value="">
+                                </div>
+                            </div>                           
+                            <div class="form-group form-actions">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-success"><i class="gi gi-plus" id="icon-margin"></i>Save</button>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- END Horizontal Form Content -->
+                            </div>
+                            <!-- END div.row -->
+                                         
+                                            <% } else if(render == "true"){ %>
+                                            
+                                                                 <% formData.forEach( function (contact){ %>
+
+
+  <!-- div.row -->
+                            <div class="row">
+                           
+                              <!-- Horizontal Form Content -->
+                    <div class="block-content">
+                
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Address Line 1</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="address-line-one" name="address-line-one" class="form-control"
+                                    value="<%= contact.form_add_one %>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Address Line 2</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="address-line-two" name="address-line-two" class="form-control"
+                                    value="<%= contact.form_add_two %>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">City</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="city" name="city" class="form-control"
+                                    value="<%= contact.form_city %>">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label col-md-2" for="general-select">County</label>
+                                <div class="col-md-3">
+                                    <select id="general-select" name="county" class="county" size="1">
+                                        <option selected="selected"><%= contact.form_county %></option>
+                                        <option>Carlow</option>
+                                        <option>Cavan</option>
+                                        <option>Clare</option>
+                                        <option>Cork</option>
+                                        <option>Donegal</option>
+                                        <optgroup label="Dublin"><option>Dublin 1</option>
+                                        <option>Dublin 2</option>
+                                        <option>Dublin 3</option>
+                                        <option>Dublin 4</option>
+                                        <option>Dublin 5</option>
+                                        <option>Dublin 6</option>
+                                        <option>Dublin 6</option>
+                                        <option>Dublin 7</option>
+                                        <option>Dublin 8</option>
+                                        <option>Dublin 9</option>
+                                        <option>Dublin 10</option>
+                                        <option>Dublin 11</option>
+                                        <option>Dublin 12</option>
+                                        <option>Dublin 13</option>
+                                        <option>Dublin 14</option>
+                                        <option>Dublin 15</option>
+                                        <option>Dublin 16</option>
+                                        <option>Dublin 17</option>
+                                        <option>Dublin 18</option>
+                                        <option>Dublin 19</option>
+                                        <option>Dublin 20</option>
+                                        <option>Dublin 21</option>
+                                        <option>Dublin 22</option>
+                                        <option>Dublin 23</option>
+                                        <option>Dublin 24</option>
+                                        <option>Rathdown</option>
+                                        <option>Fingal</option>
+                                        </optgroup>
+                                        <option>Galway</option>
+                                        <option>Kerry</option>
+                                        <option>Celbridge</option>
+                                        <option>Kilcock</option>
+                                        <option>Leixlip</option>
+                                        <option>Maynooth</option>
+                                        <option>Naas</option>
+                                        <option>Newbridge</option>
+                                        <option>Straffan</option>
+                                        <option>Kildare</option>
+                                        <option>Kilkenny</option>
+                                        <option>Laois</option>
+                                        <option>Leitrim</option>
+                                        <option>Limerick</option>
+                                        <option>Longford</option>
+                                        <option>Ardee</option>
+                                        <option>Drogheda</option>
+                                        <option>Dundalk</option>
+                                        <option>Louth</option>
+                                        <option>Louth</option>
+                                        <option>Mayo</option>
+                                        <option>Ashbourne</option>
+                                        <option>Clonee</option>
+                                        <option>Dunboyne</option>
+                                        <option>Dunshaughlin</option>
+                                        <option>Enfield</option>
+                                        <option>Garristown</option>
+                                        <option>Navan</option>
+                                        <option>Oldtown</option>
+                                        <option>Rathoath</option>
+                                        <option>Summerhill</option>
+                                        <option>Meath</option>
+                                        <option>Monaghan</option>
+                                        <option>Offaly</option>
+                                        <option>Roscommon</option>
+                                        <option>Sligo</option>
+                                        <option>Tipperary</option>
+                                        <option>Waterford</option>
+                                        <option>Westmeath</option>
+                                        <option>Wexford</option>
+                                        <option>Wicklow></option>
+                                        <option>Blessington</option>
+                                        <option>Bray</option>
+                                        <option>Greystones</option>
+                                    </select>
+                                </div>
+                            </div>   
+                            <hr/>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Contact Form Email</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="mail_form" name="mail_form" class="form-control"
+                                    value="<%= contact.mail %>">
+                                </div>
+                            </div>                                   
+                            <div class="form-group form-actions">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-success"><i class="gi gi-plus" id="icon-margin"></i>Save</button>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- END Horizontal Form Content -->
+                            </div>
+                            <!-- END div.row -->
+                                                            <% }); %>
+
+                                            <% } %>
+                          
+                        </form>
+                    </div>
+                    <!-- END Two Column Form Content -->
+                </div>
+                <!-- END Two Column Form Title -->                              
+            </div>
+            <!-- END Page Content -->
+
+         
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       <script src="js/admin/vendor/jqueadmin/ry-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        function init_map1() {
+            var myLocation = new google.maps.LatLng(38.885516, -77.09327200000001);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map1"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        init_map1();
+    });
+</script>
+
+<style>
+    .map {
+        min-width: 300px;
+        min-height: 300px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header {
+        background-color: #F5F5F5;
+        color: #36A0FF;
+        height: 70px;
+        font-size: 27px;
+        padding: 10px;
+    }
+</style>
+        <script src="js/admin/vendor/ckeditor/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace( 'editor1', {
+                } );
+            </script>
+    </body>
+</html>

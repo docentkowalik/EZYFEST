@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | New User</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    </head>
+
+    <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="gi gi-user_add" id="icon-margin"></i>New User<br><small></small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                    <li><a href="/users_add">New User</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+               <!-- Horizontal Form Block -->
+                <div class="block block-themed">
+                    <!-- Horizontal Form Title -->
+                    <div class="block-title">
+                        <h4><i class="gi gi-user" id="icon-margin"></i>User Details</h4>
+                    </div>
+                    <!-- END Horizontal Form Title -->
+
+                    <!-- Horizontal Form Content -->
+                    <div class="block-content">
+                        <form role="form" action='/processAddUser' name='processAddUser' id='processAddUser' method='POST' class="form-horizontal">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Username</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="user_name" name="user_name" class="form-control" maxlength="50" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">First Name</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="first_name" name="first_name" class="form-control" maxlength="50" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Last Name</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="last_name" name="last_name" class="form-control" maxlength="50" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Email</label>
+                                <div class="col-md-3">
+                                    <input type="email" id="user_email" name="user_email" class="form-control" maxlength="100" required autofocus >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Password</label>
+                                <div class="col-md-3">
+                                    <input type="password" id="password" name="password" class="form-control" required autofocus
+                            pattern=".{5,12}" required title="5 to 12 characters">
+                                </div>
+                            </div>
+                                                        
+                            <div class="form-group form-actions">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-check" id="icon-margin"></i> Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END Horizontal Form Content -->
+                </div>
+                <!-- END Horizontal Form Block -->
+            </div>
+            <!-- END Page Content -->
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+    </body>
+</html>

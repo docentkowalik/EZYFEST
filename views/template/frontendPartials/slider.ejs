@@ -1,0 +1,54 @@
+ <section id="main-slider" class="no-margin">
+        <div class="carousel slide green-sea" data-interval="3000" data-ride="carousel" data-wrap="true" data-pause="hover">
+            
+          
+            <div class="carousel-inner">
+                                             
+
+
+                <% slidesOBJ.forEach( function (slide){ %>  
+                                            <% build(slide.collection) %>
+ 
+
+                             <% function build(collection){ %>
+
+                   
+                    <%if (collection == "slides") { %>
+                        <div class="item active" style="background-image: url(<%= slide.slide_img %>)">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1 class="blog_content"><%= slide.slide_header %></h1>
+                                    <p class="blog_content"><%= slide.slide_content %></p> 
+                                </div> 
+                            </div>
+                        </div><!--/.item-->
+
+                    <% } %>
+                         <%if (!collection) { %>
+                            <div class="item" style="background-image: url(<%= slide.slide_img %>)">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <h1 class="blog_content"><%= slide.slide_header %></h1>
+                                        <p class="blog_content"><%= slide.slide_content %></p> 
+                                    </div> 
+                                </div>
+                            </div><!--/.item-->
+
+                         <% } %>
+
+                <% } %>
+                 
+                <% }); %>
+            </div><!--/.carousel-inner-->
+        
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+
+                    

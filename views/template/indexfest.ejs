@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><%= title %></title>
+    <link href="/css/client/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link href="/css/client/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/client/animate.css" rel="stylesheet">
+    <link href="/css/client/main.css" rel="stylesheet">
+    <link href="/css/client/main.css" rel="stylesheet">
+
+    <link href="/css/client/nanogallery.css" rel="stylesheet" type="text/css">
+    <!-- nanoGALLERY - css file for the theme 'clean'                                                                         -->
+    <link href="/css/client/themes/clean/nanogallery_clean.css" rel="stylesheet" type="text/css">
+    <!-- nanoGALLERY - css file for the theme 'light'                                                                         -->
+    <link href="/css/client/light/nanogallery_light.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+
+    <style type="text/css">
+    .hidden { display: none; }
+    .readmore { margin: 0 5px;}
+    </style>
+    
+    <script src="/js/client/jquery.js"></script>
+    <script src="/js/client/bootstrap.min.js"></script>
+    <script src="/js/client/main.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/js/client/jquery.nanogallery.js"></script>
+    <script type="text/javascript" src="/js/client/jssor.js"></script>
+    <script type="text/javascript" src="/js/client/jssor.slider.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+    <script type="text/javascript" src="/js/client/jquery.flexisel.js"></script>
+
+
+
+    <script type="text/javascript">
+
+    var day =$('.day').text();
+    var arr = data.split(' ');
+    $(".day").html(arr[0] + "<br/>" + arr[1] + arr[2] );    
+
+    </script>
+
+    <!--this function is used to include a gallery setup 
+    parial which has dynamic variables based on the festival-->
+        <% function buildGallery(){ %>
+            <% include frontendPartials/gallerySetup %>
+        <% } %> 
+    <!--end-->
+
+    
+</head>
+<body>
+    
+    <% include frontendPartials/navigation %>     <!--navigation navbar partial-->
+
+
+    <% if(resp == "shortcodes-not-found") { %>     <!--checking if page shortcodes were NOT found and if not render error page-->
+
+         <section id="error" class="container">
+            <h1>Page shortcodes not found.</h1>
+            <p class="msg">Page shortcodes were not found on this page, Please update page shortcodes.</p>
+            <a class="btn btn-success" href="/admin">Admin Dashboard</a>
+        </section>
+    
+    <% } else if(resp == "shortcodes-found"){ %>     <!--page shortcodes found-->
+            
+            <%if (renderOrder != null) { %>    <!--render order must be specified in order to know 
+                                                in which order page snippets should be rendered on the page-->
+                <% renderOrder.forEach(function(render){ %>
+                    <% render.forEach(function(order){ %>
+                            <%- build(order.collection) %>    <!--build function for each page shortcode -->
+                    <% }) %>
+                <% }) %>
+            <% } %>
+
+        <!--below function check if the collection name is equal to the collection specified in 
+        the database and based on pages partials are included, note that parials are dynamic -->
+            <% function build(collection){ %>
+
+                <%if (collection == "blog") { %>
+                    <% include frontendPartials/blog %>
+                <% } %>
+
+                <%if (collection == "sponsors") { %>
+                    <% include frontendPartials/sponsors %>
+                <% } %>
+
+                <%if (collection == "contact-form") { %>
+                    <% include frontendPartials/contact %>
+                <% } %>
+
+                <%if (collection == "line-up") { %>
+                    <% include frontendPartials/lineup %>
+                <% } %>
+
+                <%if (collection == "social-links") { %>
+                    <% include frontendPartials/social %>
+                <% } %>
+
+                <%if (collection == "slides") { %>
+                    <% include frontendPartials/slider %>
+                <% } %>
+
+                <%if (collection == "programme") { %>
+                    <% include frontendPartials/programme %>
+                <% } %>
+
+                <%if (collection == "about_us") { %>
+                    <% include frontendPartials/about %>
+                <% } %>
+
+                <%if (collection == "gallery") { %>
+                    <% include frontendPartials/gallery %>
+                        <%- buildGallery() %>
+
+                <% } %>
+
+            <% } %>
+    <% } %>
+
+    <footer id="footer" class="midnight-blue bottomFooter">
+        <div class="container">
+           <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Subscribe to our Newsletter</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <% festivalData.forEach( function (festival){ %>                            
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 cooopyright">
+                    &copy; 2015 <a target="_blank"><%= festival.festival_title %></a>. All Rights Reserved. 
+                    <a target="_blank" href="/admin">|ADMIN|</a>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <% }); %>
+    </footer><!--/#footer-->
+
+
+
+<script type="text/javascript">
+    
+        //Below function is splitting blog post text at 200 characterts and adds ... dots
+        // at the end and also provides a readmore button with a link to the full post
+
+    $( ".blog_content" ).each(function( index ) {
+        var content = $( this ).text();
+        $( this ).html(content).text();
+
+        var value = $( this ).text();
+        var maxL = 200;
+
+
+        if(value.length > maxL) {
+            console.log("yes");
+            var begin = content.substr(0, maxL),
+            end = content.substr(maxL);
+
+            $(this).html(begin)
+                    .append($('<div class="readmore"/>').attr('href', '#').html('...'))
+                    .append($('<div class="hidden" />').html(end));
+        }           
+    });
+</script>
+
+<script type="text/javascript">
+    
+    //this function is deleting html tags form the page, note that html tags are saved in the database with the post content. 
+    //This happens because of use of WYSIWIG editor for writing a post content
+    $( ".blog_content_full" ).each(function( index ) {
+        var content_full = $( this ).text();
+        $( this ).html(content_full).text();
+    });
+</script>
+
+<script type="text/javascript">
+    $( ".about_content" ).each(function( index ) {
+        var content_full = $( this ).text();
+        $( this ).html(content_full).text();
+    });
+
+</script>
+
+<script type="text/javascript">
+    
+    //sort by date setup for the programme section
+    
+    (function( $ ) {
+    $.sortByDate = function( elements, order ) {
+        console.log("sort");
+        var arr = [];
+        elements.each(function() {
+            var obj = {},
+                $el = $( this ),
+                time = $el.find( ".date" ).text(),
+                date = new Date( $.trim( time ) ),
+                timestamp = date.getTime();
+                
+                obj.html = $el[0].outerHTML;
+                obj.time = timestamp;
+                
+                arr.push( obj );
+        });
+        
+        var sorted = arr.sort(function( a, b ) {
+            
+            if( order == "ASC" ) {
+                return a.time > b.time;
+            } else {
+                return b.time > a.time;
+            }
+            
+        });
+        
+        return sorted;
+    };
+    
+    $(function() {
+        var $newer = $( "#newer" ),
+            $older = $( "#older" ),
+            $content = $( ".event-list" ),
+            $elements = $( ".post" );
+            
+            
+            
+            $older.ready(function() {
+                var elements = $.sortByDate( $elements, "ASC" );
+                var html = "";
+                for( var i = 0; i < elements.length; ++i ) {
+                    html += elements[i].html;
+                }
+                $content[0].innerHTML = html;
+                $( this ).addClass( "selected" ).
+                siblings().
+                removeClass( "selected" );
+                return false;
+                
+            });
+           $classes = $( ".post" ).removeClass( "post" );;
+
+    });
+    
+})( jQuery );  
+</script>
+
+<script type="text/javascript">
+//bellow function changes modifies a date form the database form yy/mm/dd format, takes only 
+//the month and converts it into a day string and also passes the array string to the fornt end div
+  
+    $( ".month" ).each(function( index ) {
+    var content_full = $( this ).text();
+   
+    var arr = content_full.split("-");
+    var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        
+        console.log("The current monthdsdsd is " + months[parseInt(arr[1],10)-1])
+
+    $( this ).text(months[parseInt(arr[1],10)-1]);
+});
+</script>
+
+<script type="text/javascript">
+    /* card flip for the lineup section */
+    $(".card").click(function(){
+      $(this).toggleClass("flipped");
+      return false;
+    });
+</script>
+
+<script type="text/javascript">
+
+$(window).load(function() {
+ 
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 4,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            
+            small: { 
+                changePoint:430,
+                visibleItems: 1
+            }, 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 2
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 2
+            },
+            transform: { 
+                changePoint:991,
+                visibleItems: 3
+            }
+        }
+    });
+    
+});
+</script>
+</body>
+</html>

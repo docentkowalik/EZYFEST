@@ -1,0 +1,82 @@
+  <section id="social-media" class="alizarin">
+
+
+<div class="container">
+    <div class="text-center center-block">
+            
+
+        <% festivalData.forEach( function (festival){ %>                            
+     
+                <center><h3>Follow <%= festival.festival_title %> Festival</h3></center>
+                <% }); %>
+                <br/>
+
+
+                        <% socialLinksOBJ.forEach(function(links){ %>
+                            <%- buildFacebook(links.facebook) %>
+                            <%- buildTwitter(links.twitter) %>
+                            <%- buildGoogle(links.google) %>
+                            <%- buildYoutube(links.youtube) %>
+                            <%- buildInstagram(links.instagram) %>
+                            <%- buildFlickr(links.flickr) %>
+
+                            
+                            <% function buildFacebook(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>"><i id="socialIcons" class="fa fa-facebook-square fa-5x"></i></a>
+                                                             
+                                <% } %>
+                            <% } %> 
+
+                            <% function buildTwitter(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>" target="_blank"><i id="socialIcons" class="fa fa-twitter-square fa-5x"></i></a>
+       
+                                <% } %>
+                            <% } %>             
+
+                            <% function buildGoogle(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>"><i id="socialIcons" class="fa fa-google-plus-square fa-5x"></i></a>
+              
+                                <% } %>
+                            <% } %>              
+
+                            <% function buildYoutube(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>"><i id="socialIcons" class="fa fa-google-plus-square fa-5x"></i></a>
+                     
+                                <% } %>
+                            <% } %>              
+
+                            <% function buildInstagram(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>"><i id="socialIcons" class="fa fa-instagram fa-5x"></i></a>
+                    
+                                <% } %>
+                            <% } %>         
+
+                            <% function buildFlickr(link){ %>
+
+                                <%if (link != "") { %>
+
+<a href="http://<%= link %>"><i id="socialIcons" class="fa fa-flickr fa-5x"></i></a>
+                
+                                <% } %>
+                            <% } %>              
+                        
+                        <% }) %>
+
+            </div>
+        </div>
+    </section><!--/#follow social media-->

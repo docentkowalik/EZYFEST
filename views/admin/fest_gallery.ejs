@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST| Gallery</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    
+
+
+    </head>
+
+    <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="fa fa-image " id="icon-margin"></i>Gallery<br><small>Generate <%= site %> gallery</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                                        <li><a href="#">Plugins</a></li>
+                    <li><a href="/fest_gallery">Gallery</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+              <!-- Two Column Form Sponsor -->
+                <div class="block block-themed">
+                    <!-- Two Column Form Title -->
+                    <div class="block-title">
+                    <div class="block-options">
+                            <a href="javascript:void(0)" class="btn btn-option enable-tooltip" data-toggle="block-collapse" title="Toggle block's content"><i class="fa fa-arrow-up"></i></a>
+                        </div>
+                        <h4><i class="fa fa-cog" id="icon-margin"></i>Gallery Setup</h4>
+                    </div>
+                    <!-- END Two Column Form Title Sponsor -->
+
+                    <!-- Two Column Form Sponsor -->
+                    <div class="block-content">
+                            <!-- div.row -->
+                            <div class="row">
+                           
+                              <!-- Horizontal Form Content -->
+                    <div class="block-content">
+    <form role="form" action='/processNewGallery' name='processNewGallery' id='processNewGallery' class="form-horizontal" method='POST'>
+
+
+<% if(galRender == "new") { %>
+
+                            <div class="form-group">
+                                <div class="col-md-3 col-md-offset-2">
+                                    <a href="http://idgettr.com/" target="_blank">
+                                        <button type="button" class="btn btn-info">Find Flickr User ID</button>
+                                    </a>
+
+                                    <a href="#modal-regular" data-toggle="modal">
+                                        <button type="button" class="btn btn-info">Find Picassa User ID</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="general-select">Gallery Provider</label>
+                                <div class="col-md-3">
+                                    <select id="gallery_service" name="gallery_service" class="form-control" size="1">
+                                        <option selected="selected" value="">Online Photo Sharing Website</option>
+                                        <option value="picasa">Picassa\Google+</option>
+                                        <option value="flickr">Flickr</option>
+                                    </select>
+                                </div>
+                            </div>         
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Picassa or Flickr User ID</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="gallery_account_id" name="gallery_account_id" class="form-control"
+                                    placeholder="Please enter Flickr/Picassa User ID here">
+                                </div>
+                            </div>
+
+                         <div class="form-group">
+                                <label class="control-label col-md-2">Gallery Thumbnail Size</label>
+                                <div class="col-md-8">
+                                    <input name="gallery_thumb_width" id="gallery_thumb_width" type="number" step="1" min="100" max="500" id="thumbnail_size_w" value="250" class="small-text">
+                                    <span class="help-block">Width</span>
+                            
+                                    <input name="gallery_thumb_height" id="gallery_thumb_height" type="number" step="1" min="100" max="500" id="thumbnail_size_w" value="250" class="small-text">
+                                    <span class="help-block">Height</span>
+                                </div>
+                            </div>                                                
+                            <div class="form-group form-actions">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-success"><i class="gi gi-plus" id="icon-margin"></i>Create Gallery</button>
+                                </div>
+                            </div>
+
+<% } else if(galRender == "exists"){ %>
+            
+                        
+
+                             <div class="form-group">
+                                <div class="col-md-3 col-md-offset-2">
+                                    <a href="http://idgettr.com/" target="_blank">
+                                        <button type="button" class="btn btn-info">Find Flickr User ID</button>
+                                    </a>
+
+                                    <a href="#modal-regular" data-toggle="modal">
+                                        <button type="button" class="btn btn-info">Find Picassa User ID</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="general-select">Gallery Provider</label>
+                                <div class="col-md-3">
+                                    <select id="gallery_service" name="gallery_service" class="form-control" size="1">
+                                    <% galleryArr.forEach( function (gallery){ %>
+                                                    <%- buildSelect(gallery.gallery_service) %>
+
+                                 <% function buildSelect(collection){ %>
+
+                                                <%if (collection == "picasa") { %>
+                                                    <option value="">Online Photo Sharing Website</option>
+                                                    <option  selected="selected" value="picasa">Picassa\Google+</option>
+                                                    <option value="flickr">Flickr</option>
+                                                <% } %>
+                                                <%if (collection == "flickr") { %>
+                                                    <option value="">Online Photo Sharing Website</option>
+                                                    <option value="picasa">Picassa\Google+</option>
+                                                    <option selected="selected" value="flickr">Flickr</option>
+                                                <% } %>
+                                                <%if (collection == "") { %>
+                                                    <option value="" selected="selected">Online Photo Sharing Website</option>
+                                                    <option value="picasa">Picassa\Google+</option>
+                                                    <option value="flickr">Flickr</option>
+                                                <% } %>
+
+
+                                            <% } %>
+
+                                   
+
+                                       
+                                    </select>
+                                </div>
+                            </div>         
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="horizontal-text">Picassa or Flickr User ID</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="gallery_account_id" name="gallery_account_id" class="form-control" 
+                                    value="<%= gallery.gallery_account_id %>" placeholder="Please enter Flickr/Picassa User ID here">
+                                </div>
+                            </div>
+
+                         <div class="form-group">
+                                <label class="control-label col-md-2">Gallery Thumbnail Size</label>
+                                <div class="col-md-8">
+                                    <input name="gallery_thumb_width" id="gallery_thumb_width" type="number" step="1" min="100" max="500" id="thumbnail_size_w" value="<%= gallery.gallery_thumb_width %>" class="small-text">
+                                    <span class="help-block">Width</span>
+                            
+                                    <input name="gallery_thumb_height" id="gallery_thumb_height" type="number" step="1" min="100" max="500" id="thumbnail_size_w" value="<%= gallery.gallery_thumb_height %>" class="small-text">
+                                    <span class="help-block">Height</span>
+                                </div>
+                            </div>                                                
+                            <div class="form-group form-actions">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-success"><i class="gi gi-plus" id="icon-margin"></i>Save Gallery</button>
+                                </div>
+                            </div>
+                        <% }) %>
+
+    <% } %>
+                        </form>                                
+                          
+                    </div>
+                    <!-- END Horizontal Form Content -->
+                            </div>
+                            <!-- END div.row -->
+                    </div>
+                    <!-- END Two Column Form Content -->
+                </div>
+                <!-- END Two Column Form Title -->                              
+            </div>
+            <!-- END Page Content -->
+
+          <!-- Regular Modal -->
+                        <div id="modal-regular" class="modal fade">
+                            <!-- Modal Dialog -->
+                            <div class="modal-dialog">
+                                <!-- Modal Content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>How do I find my Picasa User ID ?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Since Picasa has been combined with Google Plus, Picasa photo albums are also Google Plus photo albums. This also means that there are different ways of finding your ID’s depending on whether you start at the Picasa website or your Google Plus page.</p>
+
+                                        <strong>Starting at Google Plus:</strong>
+                                        <ul>
+                                            <li>1. Log into Google Plus.</li>
+                                            <li>2. In the left sidebar, click “Photos”. From the top menu, click “Albums” and then click on one of your albums.</li>
+                                            <li class="modalPadding">3. The URL address should now be something like:
+“https://plus.google.com/photos/<strong>112515131248168353825</strong>/albums/5828938068968925825“,
+where <strong>112515131248168353825</strong> is your <strong>User ID</strong> and 5828938068968925825 is the Album ID.</li>
+                                        </ul>
+                                        <hr/>
+                                        <strong>Starting at Picasa:</strong>
+                                        <ul>
+                                            <li>1. Log into Picasa.</li>
+                                            <li>2. From the list of photo albums, click on the one you want to show.</li>
+                                            <li class="modalPadding">3. The URL address should now be something like:
+“https://picasaweb.google.com/<strong>112515131248168353825</strong>/NewMexicoSummer2011“,
+
+where <strong>112515131248168353825</strong> is your <strong>User ID</strong>.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                <!-- END Modal Content -->
+                            </div>
+                            <!-- END Modal Dialog -->
+                        </div>
+                        <!-- END Regular Modal -->
+
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+        <script src="js/admin/accordionMenu.js"></script>
+<script type="text/javascript">
+    // Collapsible block
+        $('[data-toggle="block-collapse"]').click(function(){
+            if ( $(this).hasClass('active') ) {
+                $(this).parents('.block').find('.block-content').slideDown(250);
+                $(this).removeClass('active').html('<i class="fa fa-arrow-up"></i>');
+            }
+            else
+            {
+                $(this).parents('.block').find('.block-content').slideUp(250);
+                $(this).addClass('active').html('<i class="fa fa-arrow-down"></i>');
+            }
+        });
+</script>
+    </body>
+</html>

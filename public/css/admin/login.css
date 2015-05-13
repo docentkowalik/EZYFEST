@@ -1,0 +1,180 @@
+/* CSS Document */
+/* ---------- FONTAWESOME ---------- */
+/* ---------- http://fortawesome.github.com/Font-Awesome/ ---------- */
+/* ---------- http://weloveiconfonts.com/ ---------- */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* ---------- ERIC MEYER'S RESET CSS ---------- */
+/* ---------- http://meyerweb.com/eric/tools/css/reset/ ---------- */
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+/* ---------- FONTAWESOME ---------- */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+*:before, *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+body {
+  background: #1E384A;
+  color: #606468;
+  font: 87.5%/1.5em 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input {
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* ---------- LOGIN ---------- */
+#login {
+  width: auto 0px;
+}
+
+#login form span {
+  background-color: #363b41;
+  border-radius: 3px 0px 0px 3px;
+  color: #606468;
+  display: block;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
+
+#login form input {
+  height: 50px;
+}
+
+#login form input[type="text"], input[type="password"], input[type="tel"], input[type="email"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #eee;
+  margin-bottom: 1em;
+  padding: 0 16px;
+border: none;
+}
+
+#login form input[type="submit"] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #eee;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  width: 100%;
+
+  cursor: pointer;
+height: 50px;
+border: none;
+color: #FFF;
+border-radius: 3px;
+display: block;
+font-size: 14px;
+background: #428bca;
+-webkit-box-shadow: 0 4px 0 #4A9EE7;
+box-shadow: 0 4px 0 #4A9EE7;
+}
+
+#login form input[type="submit"]:hover {
+  background-color: #3E7EB5;
+  -webkit-box-shadow: 0 4px 0 #3E7EB5;
+  box-shadow: 0 4px 0 #3E7EB5;}
+
+
+#login > p span {
+  padding-left: 10px;
+}
+
+#labform{
+  font-size: 16px;
+  color: #FFF;
+
+}
+
+.centered {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.bottom-options{
+color: white;
+text-decoration: none;
+  text-transform: uppercase;
+margin-left: 5px;
+  margin-right: 5px;
+}
+.bottom-options:hover{
+color: #428bca;
+text-decoration: none;
+  text-transform: uppercase;
+
+
+}
+.logoIMG {
+  display: block;
+  margin: 20px;
+   -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+     -moz-transform: scale(0.8); /* FF3.8+ */
+      -ms-transform: scale(0.8); /* IE9 */
+       -o-transform: scale(0.8); /* Opera 10.8+ */
+          transform: scale(0.8);
+}
+
+.MGSBAR {
+  margin: 10px;
+  font-size: 16px;
+  border: 5px solid rgba(66, 139, 202, 0.20);
+  padding: 10px;
+  color: rgb(251, 252, 252);
+  text-transform: uppercase;
+}

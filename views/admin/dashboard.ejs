@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | Dashboard</title>
+
+        <meta name="" content="">
+        <meta name="" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="/css/admin/bootstrap.css">
+        <link rel="stylesheet" href="/css/admin/icons.css">
+        <link rel="stylesheet" href="/css/admin/main.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    </head>
+
+    <body>
+       
+                           <% include partials/header %>
+
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+               
+                <% include partials/miniprofile %>
+
+
+                    <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=" active"><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+          <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="gi gi-dashboard themed-color"></i><%= site_title %> Dashboard<br>
+                <small>Welcome <strong><%= first %></strong>, everything looks good!</small></h1>                
+
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/admin"><i class="gi gi-display"></i></a>
+                    </li>
+                    <li><a href="/admin">Dashboard</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+            
+
+                
+
+
+<!-- Live Updates Block -->
+                <div class="block block-themed">
+                    <!-- Live Updates Title -->
+                    <div class="block-title">
+                        <div class="block-options">
+                            <a href="javascript:void(0)" class="btn btn-option enable-tooltip" data-toggle="block-collapse" title="Toggle block's content"><i class="fa fa-arrow-up"></i></a>
+                        </div>
+                        <h4><i class="fa fa-wrench"></i> Logo</h4>
+                    </div>
+                    <!-- END Live Updates Title -->
+
+                    <!-- Live Updates Content -->
+                    <div class="block-content">
+                       <form role="form" action='/processLogo' name='processLogo' id='processLogo' class="form-horizontal" method='POST'
+       enctype="multipart/form-data">
+
+                            <!-- div.row -->
+                            <div class="row">
+                                <!-- 1st Column -->
+                                <div class="col-md-8">
+                                    
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="file">Festival Logo</label>
+                                            
+<% festival.forEach( function (fest){ %>     
+
+                                        <% if(fest.logo != null) { %>
+                                        
+                                            <div class="col-md-7">
+                                                <input type="file" id="logo_image" name="logo_image" class="form-control">
+                                            </div>
+
+                                            <div class="col-md-1">
+
+                                                     <img class="imgPlugin" src="<%= fest.logo %>" alt="logo">
+                                            </div>
+
+                                            <% } %>
+                                            <% if(fest.logo == null) { %>
+                                            
+                                            <div class="col-md-8">
+                                                <input type="file" id="logo_image" name="logo_image" class="form-control">
+                                            </div>
+
+                                            <% } %>                       
+                <% }); %>
+                                            
+                                    </div>
+                                    <div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-check" id="icon-margin"></i>Save</button>
+                                    </div>
+                            </div>
+                                </div>
+                                <!-- END 1st Column -->
+                            </div>
+                            <!-- END div.row -->
+                        </form>
+                    </div>
+                    <!-- END Live Updates Content -->
+                </div>
+                <!-- END Live Updates Block -->
+
+
+                <!-- Products List Block -->
+                <div class="block block-themed block-last">
+                    <!-- Products List Title -->
+                    <div class="block-title">
+                    <div class="block-options">
+                            <a href="javascript:void(0)" class="btn btn-option enable-tooltip" data-toggle="block-collapse" title="Toggle block's content"><i class="fa fa-arrow-up"></i></a>
+                        </div>
+                        <h4><i class="fa fa-comments"></i> Blog Comment Moderation Panel</h4>
+                    </div>
+                    <!-- END Products List Title -->
+
+                    <!-- Products List Content -->
+                    <div class="block-content">
+                        <div class="row row-items">
+                            
+                            <% comments.forEach( function (comment){ %>
+
+                            <%if (comment.released == false) { %>
+                                    <div class="row row-items row-comment">
+                                
+                                    <div class="col-sm-8 content-text">
+                                        <h4 class="media-heading" id="wrap-comment"><small>Author: </small><%= comment.author %></h4>
+                                        <p><small>Date: </small><%= comment.date %></p>
+                                        <p id="wrap-comment"><small>Comment: </small><%= comment.comment %></p>
+                                    </div>
+                                    <div class="col-sm-4 push text-right">
+                                                                            <h4 class="sub-header text-black"></h4>
+
+                                        <a href="/processApproveComment?commentID=<%= comment._id %>" class="btn btn-warning"><i class="fa fa-check"></i> Approve</a>
+                                        <a href="/processDeleteComment?commentID=<%= comment._id %>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            <% } %>
+
+                                
+                            <% }); %>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Products List Content -->
+                </div>
+                <!-- END Products List Block -->
+
+
+            </div>
+            <!-- END Page Content -->
+
+   
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+
+<script type="text/javascript">
+    // Collapsible block
+        $('[data-toggle="block-collapse"]').click(function(){
+            if ( $(this).hasClass('active') ) {
+                $(this).parents('.block').find('.block-content').slideDown(250);
+                $(this).removeClass('active').html('<i class="fa fa-arrow-up"></i>');
+            }
+            else
+            {
+                $(this).parents('.block').find('.block-content').slideUp(250);
+                $(this).addClass('active').html('<i class="fa fa-arrow-down"></i>');
+            }
+        });
+</script>
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>EZYFEST | New Page</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <link rel="stylesheet" href="css/admin/bootstrap.css">
+        <link rel="stylesheet" href="css/admin/icons.css">
+        <link rel="stylesheet" href="css/admin/main.css">
+        <link rel="shortcut icon" href="http://res.cloudinary.com/docentkowalik/image/upload/v1429701357/icon_zifupq.png">
+
+        <script src="js/admin/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    
+
+
+    </head>
+
+   <!-- Body -->
+    <body>
+       
+        <!-- Page Container -->            
+                           <% include partials/header %>
+ <!-- Left Sidebar -->
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                                        <% include partials/miniprofile %>
+
+              <!-- Sidebar Tabs -->
+                    <div class="sidebar-tabs-con">
+                            <div class="tab-pane active" id="side-tab-menu">
+                                <!-- Primary Navigation -->
+                                <nav id="primary-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/admin" class=""><i class="gi gi-display"></i>Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link active"><i class="gi gi-more_windows"></i>Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/all_pages">All Pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new_page">New Page</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="gi gi-electrical_plug"></i>Plugins</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_lineup">Line Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_programme">Programme</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_blog">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/social_links">Social Links</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_sponsors">Sponsors</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_gallery">Gallery</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_carousel">Carousel Header</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fest_contact_form">Contact Form</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-eye"></i>Appearance</a>
+                                            <ul>
+                                                 <li>
+                                                    <a href="/menu_navigation">Navigation Menu</a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/reading_settings">Home Page Setup</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="menu-link"><i class="fa fa-users"></i>Users</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="/users_all">All users</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/users_all">New User</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- END Primary Navigation -->
+                            </div>
+                    </div>
+                    <!-- END Sidebar Tabs -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </aside>
+            <!-- END Left Sidebar -->
+
+            <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="gi gi-file" id="icon-margin"></i>New Page<br><small>Create - Publish- Update</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb breadcrumb-top">
+                    <li>
+                        <a href="/"><i class="gi gi-display"></i></a>
+                    </li>
+                    <li>
+                        <a href="/all_pages">Pages</a>
+                    </li>
+                    <li><a href="#">New Page</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- Input Sizes -->
+
+                            <h4 class="sub-header">Page Title</h4>
+                            <form role="form" action='/processNewPage' name='processNewPage' id='processNewPage' method='POST'>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="text" id="page_title" name="page_title" class="form-control" placeholder="Enter Page Title Here" required autofocus
+                            pattern=".{2,}"   required title="2 characters minimum">
+                                </div>
+                                <!-- Page Publishing -->
+                                <div class="col-md-4">
+                                    <!-- Collapsible Block -->
+                                    <div class="block block-themed">
+                                        <!-- Collapsible Title -->
+                                        <div class="block-title">
+                                            <div class="block-options">
+                                            </div>
+                                            <h4><i class="gi gi-upload" id="icon-margin"></i>Publish</h4>
+                                        </div>
+                                        <!-- END Collapsible Title -->
+
+                                         <div class="block-content full">
+
+                                            <button class="btn btn-sm btn-success" type="submit">
+                                                <i class="gi gi-upload" id="icon-margin"></i>Publish
+                                            </button>
+                                            <a href="/all_pages">
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="gi gi-bin" id="icon-margin"></i>Cancel
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- END Collapsible Block -->
+                                </div>
+                                <!-- END Page Publishing -->
+                            <!-- END Input Sizes -->
+
+                        <h4 class="sub-header">Page Shortcode/s</h4>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                     <textarea  id="shortcode" name="shortcode" class="form-control" col="5"></textarea>
+                                        <em>Please separate shortcodes with comma</em>
+                                </div>
+                            </div>
+                             <!-- Page Publishing -->
+                                <div class="col-md-4">
+                                    <!-- Collapsible Block -->
+                                    <div class="block block-themed">
+                                        <!-- Collapsible Title -->
+                                        <div class="block-title">
+                                            <div class="block-options">
+                                            </div>
+                                            <h4><i class="gi gi-upload" id="icon-margin"></i>Shortcodes</h4>
+                                        </div>
+                                        <!-- END Collapsible Title -->
+
+                                         <div class="block-content full">
+
+                            <ul>
+                                <li><strong>About Us</strong> - [shortcode_about_us]</li>
+                                <li><strong>Line Up</strong> - [shortcode_line_up]</li>
+                                <li><strong>Programme</strong> - [shortcode_programme]</li>
+                                <li><strong>Blog</strong> - [shortcode_blog]</li>
+                                <li><strong>Social Links</strong> - [shortcode_social_links]</li>
+                                <li><strong>Sponsors</strong> - [shortcode_blog]</li>
+                                <li><strong>Gallery</strong> - [shortcode_gallery]</li>
+                                <li><strong>Carousel Header</strong> - [shortcode_carousel]</li>
+                                <li><strong>Contact Form</strong> - [shortcode_contact_form]</li>
+
+
+                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- END Collapsible Block -->
+                                </div>
+                                <!-- END Page Publishing -->
+                        </div>
+
+                            <!-- WYSIWYig
+                            <h4 class="sub-header">Page Content</h4>
+                            <div class="form-group">
+                                <div class="col-md-8 ">
+                                    <textarea name="editor1" id="editor1" rows="15"></textarea>
+                                </div>
+                            </div>
+                             -->
+                            </form>
+
+
+                              
+            </div>
+            <!-- END Page Content -->
+
+         
+        </div>
+        <!-- END Page Container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/admin/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/admin/vendor/bootstrap.min.js"></script>
+
+        <script src="js/admin/accordionMenu.js"></script>
+        <script src="js/admin/vendor/ckeditor/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace( 'editor1', {
+                } );
+            </script>
+    </body>
+</html>

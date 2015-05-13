@@ -1,0 +1,38 @@
+<section id="sponsor">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                                 
+                      <ul id="flexiselDemo3">
+                                                 
+                    <% sponsorsOBJ.forEach(function(render){ %>
+
+    <li>
+        
+       <%if (render.sponsor_link != "") { %>
+        
+    <a href="http://<%= render.sponsor_link %>" target="_blank">
+        <img class="img-responsive" src="<%= render.sponsor_img %>" alt="<%= render.sponsor_name %>" />    
+    </a>
+
+        <% } %>
+        
+
+        <%if (render.sponsor_link == "") { %>
+        
+        <img class="img-responsive" src="<%= render.sponsor_img %>" alt="<%= render.sponsor_name %>" />    
+        
+        <% } %>
+    
+    </li>
+                <% }) %>
+                </ul>   
+
+                    </div>
+                </div>              
+            </div>
+
+
+
+
+    </section><!--/#sponsor-->
